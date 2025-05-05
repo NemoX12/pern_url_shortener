@@ -5,7 +5,9 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      <PostForm />
+      <div className="App-container">
+        <PostForm />
+      </div>
     </div>
   );
 };

@@ -1,17 +1,105 @@
-.postform--container {
+.postform-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  width: 90%;
+  max-width: 800px;
+  height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.postform-container__form {
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+
+  width: 100%;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.postform--container__form {
+.link_input {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  position: relative;
 }
 
-.postform--container__form button {
-  margin-top: 35px;
+.link_input input {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 45px;
+
+  background-color: #f9f9f9;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.link_input input:focus {
+  border-color: #5cdeff;
+}
+
+.link_placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50%);
+  font-size: 14px;
+  transform: translateY(-50%);
+  color: #808080;
+  transition: top 0.2s ease, color 0.2s ease;
+}
+
+.link_input input:valid + .link_placeholder,
+.link_input input:focus + .link_placeholder {
+  top: -8px;
+  font-size: 12px;
+  color: #5cdeff;
+}
+
+.postform-container__form button {
+  padding: 10px;
+  height: 45px;
+
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background-color: #5cdeff;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.postform-container__form button:hover {
+  background-color: #54c6e2;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.output {
+  /* flex: 3; */
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
 }

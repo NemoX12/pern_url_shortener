@@ -7,7 +7,7 @@ const db = require("./db");
 app.use(cors());
 app.use(express.json());
 
-app.get("/links", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const allLinks = await db.query("SELECT * FROM short_links");
     res.json(allLinks.rows);
@@ -16,7 +16,7 @@ app.get("/links", async (req, res) => {
   }
 });
 
-app.get("/links/:id", async (req, res) => {
+app.get("/:id", async (req, res) => {
   try {
     const link = await db.query("SELECT * FROM short_links WHERE id = $1", [
       req.params.id,
@@ -27,7 +27,7 @@ app.get("/links/:id", async (req, res) => {
   }
 });
 
-app.post("/links", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const { link } = req.body;
     const id = v4().slice(0, 8);
